@@ -34,13 +34,14 @@ function Header() {
     heading.textContent = 'Lambda Times'
     temp.textContent = '98°'
 
-    // append header to DOM inside header-container
-    const headerContainer = document.querySelector('.header-container')
-    console.log(headerContainer)
-    headerContainer.appendChild(header)
 
     // return 
-    return headerContainer
+    return header
 }
 
-Header()
+const header = Header()
+
+// append header to DOM inside header-container
+const headerContainer = document.querySelector('.header-container')
+console.log(headerContainer)
+headerContainer.appendChild(header)
