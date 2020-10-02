@@ -13,7 +13,7 @@
 axios.get('https://lambda-times-api.herokuapp.com/topics')
     .then(res => {
         const topics = res.data.topics
-        console.log(topics)
+        // console.log(topics)
         topics.forEach(element => {
             const tab = document.createElement('div')
             tab.classList.add('tab')

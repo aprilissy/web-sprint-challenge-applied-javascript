@@ -36,8 +36,11 @@ function Header() {
 
     // append header to DOM inside header-container
     const headerContainer = document.querySelector('.header-container')
+    console.log(headerContainer)
     headerContainer.appendChild(header)
 
     // return 
     return headerContainer
 }
+
+Header()

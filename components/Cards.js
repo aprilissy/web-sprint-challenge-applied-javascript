@@ -25,13 +25,13 @@
 axios.get('https://lambda-times-api.herokuapp.com/articles')
     .then(res => {
         const articles = res.data.articles
-        console.log(articles)
+        // console.log(articles)
 
         Object.keys(articles).forEach(topic => {
-            console.log("topic: ", topic, articles[topic])
+            // console.log("topic: ", topic, articles[topic])
 
             articles[topic].forEach(info => {
-                console.log("info", info)
+                // console.log("info", info)
                 const card = articleCardMaker(info)
 
                 const cardsContainer = document.querySelector('.cards-container')
