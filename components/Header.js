@@ -24,7 +24,7 @@ function Header() {
     date.classList.add('date')
     temp.classList.add('temp')
 
-    // set html hiearchy
+    // set html hierarchy
     header.appendChild(date)
     header.appendChild(heading)
     header.appendChild(temp)
