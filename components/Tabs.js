@@ -16,7 +16,7 @@ axios.get('https://lambda-times-api.herokuapp.com/topics')
         console.log(topics)
         topics.forEach(element => {
             const tab = document.createElement('div')
-            tab.classList = ('tab')
+            tab.classList.add('tab')
             tab.textContent = element
             // Append tab to DOM under topics div
             const topics = document.querySelector('.topics')
