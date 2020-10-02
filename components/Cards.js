@@ -26,20 +26,24 @@ axios.get('https://lambda-times-api.herokuapp.com/articles')
     .then(res => {
         const articles = res.data.articles
         console.log(articles)
-        debugger
+
         Object.keys(articles).forEach(topic => {
-            console.log(topic)
-            debugger
+            console.log("topic: ", topic, articles[topic])
+
             articles[topic].forEach(info => {
+                console.log("info", info)
                 const card = articleCardMaker(info)
-                debugger
+
+                const cardsContainer = document.querySelector('.cards-container')
+                cardsContainer.appendChild(card)
 
             })
         })
 
     })
     .catch(err => {
-        debugger
+        // debugger
+        console.log(err)
     })
 
 
@@ -67,10 +71,13 @@ function articleCardMaker(article) {
     imgContainer.appendChild(image)
 
     // attributes and text
-    headline.textContent = res.data.articles.bootstrap.headline
-    image.src = res.data.articles.bootstrap.authorPhoto
-    nameAuthor.textContent = `By ${res.data.articles.bootstrap.authorName}`
+    headline.textContent = article.headline
+    image.src = article.authorPhoto
+    nameAuthor.textContent = `By ${article.authorName}`
 
+    card.addEventListener("click", () => {
+        console.log(headline)
+    })
 
-    return null
+    return card
 }
