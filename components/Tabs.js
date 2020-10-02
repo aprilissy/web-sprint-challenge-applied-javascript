@@ -18,9 +18,12 @@ axios.get('https://lambda-times-api.herokuapp.com/topics')
             const tab = document.createElement('div')
             tab.classList = ('tab')
             tab.textContent = element
-
+            // Append tab to DOM under topics div
+            const topics = document.querySelector('.topics')
+            topics.appendChild(tab)
+            console.log(tab)
         });
     })
     .catch(err => {
-
+        debugger
     })
