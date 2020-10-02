@@ -9,3 +9,38 @@
 //    <div class="tab">topic here</div>
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
+
+axios.get('https://lambda-times-api.herokuapp.com/topics')
+    .then(res => {
+        const topics = res.data.topics
+        // console.log(topics)
+        topics.forEach(element => {
+            const tab = document.createElement('div')
+            tab.classList.add('tab')
+            tab.textContent = element
+            // Append tab to DOM under topics div
+            const topics = document.querySelector('.topics')
+            topics.appendChild(tab)
+            // console.log(tab)
+
+            // Stretch: Use the tabs at the top of the page to filter articles by topic.
+            tab.addEventListener('click', () => {
+                articleCardMaker(element) // I don't have access to this function
+            })
+        });
+    })
+    .catch(err => {
+        debugger
+    })
+
+
+
+
+// Stretch: Use the tabs at the top of the page to filter articles by topic.
+// const topics = document.querySelector('.topics')
+// console.log(topics)
+// Object.keys(topics).forEach(elem => {
+//     elem.addEventListener("click", () => {
+//         articleCardMaker()
+//     })
+// })
